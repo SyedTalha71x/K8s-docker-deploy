@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  client:
+    build: ./client
+    ports:
+      - "5173:80"
+    restart: unless-stopped
+    env_file:
+      - ./client/.env
+    depends_on:
+      - server
+
+  server:
+    build: ./server
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    env_file:
+      - ./server/.env
