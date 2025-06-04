@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: talhahussain913/mern-server:server-v1
+        image: talhahussain913/mern-server:server-v5
         ports:
         - containerPort: 5000
         envFrom:
