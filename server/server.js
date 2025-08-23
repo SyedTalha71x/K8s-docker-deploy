@@ -11,6 +11,7 @@ app.use(cors({
     'https://app.syedtalhahussain.com',
     'http://app.syedtalhahussain.com',
     'http://localhost:5173',
+    'http://3.82.161.157:5173'
   ],
   credentials: true
 }));
