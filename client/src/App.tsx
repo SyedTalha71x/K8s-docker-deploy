@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/users`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/users`);
         const data = await response.json();
         setUsers(data);
       } catch (error) {

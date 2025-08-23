@@ -9,7 +9,8 @@ const app = express();
 app.use(cors({
   origin: [
     'https://app.syedtalhahussain.com',
-    'http://app.syedtalhahussain.com'
+    'http://app.syedtalhahussain.com',
+    'http://localhost:5173',
   ],
   credentials: true
 }));
@@ -30,7 +31,6 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 app.get('/api/users', async (req, res) => {
-  console.log('Request received for /users');
   try {
     const users = await User.find();
     res.json(users);
@@ -40,6 +40,10 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
-app.listen(PORT, (req,res) => {
+app.get("/", (req, res) => {
   res.send(`Server is running on port ${PORT}`);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
