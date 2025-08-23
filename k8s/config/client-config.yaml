@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: client-config
-data:
-  VITE_API_URL: "http://app.syedtalhahussain.com"  # Point to server NodePort
